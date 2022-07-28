@@ -1,0 +1,11 @@
+apiVersion: 1
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    access: proxy
+    database: ${influx_database}
+    user: ${influx_reader_user}
+    password: ${influx_reader_password}
+    url: ${influx_url}
+    isDefault: true
+    editable: true
