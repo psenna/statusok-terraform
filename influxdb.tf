@@ -22,6 +22,7 @@ resource "docker_container" "influx_container" {
   name  = "statusok-influxdb"
   image = docker_image.influx_image.latest
   env   = local.influx_env_config
+  restart = "unless-stopped" 
 
   volumes {
     container_path = "/var/lib/influxdb"

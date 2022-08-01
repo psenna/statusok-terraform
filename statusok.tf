@@ -22,6 +22,7 @@ resource "docker_image" "statusok_image" {
 resource "docker_container" "statusok_container" {
   name  = "statusok-statusok"
   image = docker_image.statusok_image.latest
+  restart = "unless-stopped" 
 
   upload {
     file    = "/config/config.json"

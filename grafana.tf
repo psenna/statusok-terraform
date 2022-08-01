@@ -33,6 +33,7 @@ resource "docker_container" "grafana_container" {
   name  = "statusok-grafana"
   image = docker_image.grafana_image.latest
   env   = local.grafana_env_vars
+  restart = "unless-stopped" 
 
   ports {
     internal = 3000
